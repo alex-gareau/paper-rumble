@@ -100,11 +100,13 @@ public class Collectable : MonoBehaviour
 
     public void LaunchCoin()
     {
+        lifeCounter = lifeTime;
+        launched = false;
+        pickable = false;
         ToggleTrigger(false);
         GetComponent<Rigidbody>().AddForce(Random.Range(-2, 2), Random.Range(4, 6), Random.Range(-2, 2), ForceMode.Impulse);
         Invoke("CanCheckVelocity", 0.3f);
-        lifeCounter = lifeTime;
-        launched = false;
+        
     }
 
     private void CanCheckVelocity()

@@ -74,9 +74,11 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
 
-            Collectable newCollectable = GameManager.instance.collectablesPool.Get();
+            Collectable newCollectable = CollectableManager.instance.collectablesPool.Get();
 
             newCollectable.transform.position = transform.position + new Vector3(0, 1f, 0);
+
+            newCollectable.transform.rotation = transform.rotation;
 
             newCollectable.GetComponent<Collectable>().LaunchCoin();
         }

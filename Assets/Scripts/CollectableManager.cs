@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class GameManager : MonoBehaviour
+public class CollectableManager : MonoBehaviour
 {
 
-    public static GameManager instance;
+    public static CollectableManager instance;
 
     [SerializeField]
     private Collectable _collectablePrefab;
