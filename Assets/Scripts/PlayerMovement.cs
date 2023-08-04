@@ -226,20 +226,15 @@ public class PlayerMovement : MonoBehaviour
             //    platformMoveSpeed = currentPlatform.moveSpeed;
             //}
 
-            
-
-
-
             if (Input.GetButtonDown("Fire1"))
             {
                 Attack(sprite.flipX);
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Fire2"))
             {
                 SlamAttack();
             }
-
 
             spriteAnimator.SetBool("movingBackward", movingBackward);
 
