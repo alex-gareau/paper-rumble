@@ -117,19 +117,6 @@ public class PlayerMovement : MonoBehaviour
         {
             moveAmount.y = moveAmount.y + externalMoveSpeed.y + (Physics.gravity.y * gravityScale * Time.fixedDeltaTime);
         }
-        //else if (currentPlatform != null && charController.isGrounded)
-        //{
-        //    gravityScale = regularGravity;
-        //    if (charController.isGrounded && externalMoveSpeed.y < 0)
-        //    {
-        //        moveAmount.y = moveAmount.y + (Physics.gravity.y * gravityScale * Time.fixedDeltaTime);
-        //    }
-        //    else
-        //    {
-        //        moveAmount.y = currentPlatform.moveSpeed * Physics.gravity.y * gravityScale * Time.fixedDeltaTime;
-
-        //    }
-        //}
         else
         {
             moveAmount.y = Physics.gravity.y * gravityScale * Time.fixedDeltaTime;
@@ -179,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
                 if (!lastGrounded && externalMoveSpeed == Vector3.zero)
                 {
                     if (landingParticles != null) landingParticles.SetActive(true);
-                    canDash = true;
+                    //canDash = true;
                     gravityScale = 13f;
                 }
 
@@ -193,38 +180,29 @@ public class PlayerMovement : MonoBehaviour
             {
                 gravityScale = regularGravity;
                 //Dash action
-                if (Input.GetButtonDown("Fire1") && canDash)
-                {
-                    currentDashTime = 0;
-                    canDash = false;
-                    isDashing = true;
-                }
+                //if (Input.GetButtonDown("Fire1") && canDash)
+                //{
+                //    currentDashTime = 0;
+                //    canDash = false;
+                //    isDashing = true;
+                //}
             }
 
-            if (currentDashTime < maxDashTime)
-            {
-                moveAmount = transform.forward * dashDistance;
-                currentDashTime += dashStoppingSpeed;
-            }
-            else
-            {
-                isDashing = false;
-            }
+            //if (currentDashTime < maxDashTime)
+            //{
+            //    moveAmount = transform.forward * dashDistance;
+            //    currentDashTime += dashStoppingSpeed;
+            //}
+            //else
+            //{
+            //    isDashing = false;
+            //}
 
             lastGrounded = charController.isGrounded;
 
             spriteAnimator.SetFloat("moveSpeed", charController.velocity.magnitude);
 
             spriteAnimator.SetBool("onGround", lastGrounded);
-
-            ////Check if the player is on a moving platform
-            Vector3 externalMovement = externalMoveSpeed;
-
-            float platformMoveSpeed = 0;
-            //if (currentPlatform != null)
-            //{
-            //    platformMoveSpeed = currentPlatform.moveSpeed;
-            //}
 
             if (Input.GetButtonDown("Fire1"))
             {
@@ -238,7 +216,7 @@ public class PlayerMovement : MonoBehaviour
 
             spriteAnimator.SetBool("movingBackward", movingBackward);
 
-            charController.Move((new Vector3(moveAmount.x * moveSpeed, moveAmount.y, moveAmount.z * moveSpeed) + (externalMovement * platformMoveSpeed)) * Time.deltaTime);
+            charController.Move((new Vector3(moveAmount.x * moveSpeed, moveAmount.y, moveAmount.z * moveSpeed)) * Time.deltaTime);
 
             if (!flipped && moveAmount.x < 0)
             {

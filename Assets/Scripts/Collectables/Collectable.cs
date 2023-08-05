@@ -80,7 +80,7 @@ public class Collectable : MonoBehaviour
         {
             case collectables.Coin:
                 Debug.Log("Collected a coin");
-                //GameManager.instance.AddCoins(value);
+                other.GetComponent<PlayerStatus>().GetCoin(value);
                 break;
             case collectables.Health:
                 Debug.Log("Collected a health item");
