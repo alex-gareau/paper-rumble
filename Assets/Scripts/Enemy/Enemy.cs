@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     {
         _currentHealth = health;
 
-        GetComponent<EnemyMovement>().SetupEnemyMovement(entrancePostition, moveSpeed);
+        GetComponent<EnemyAI>().SetupEnemyMovement(entrancePostition, moveSpeed);
 
     }
 
@@ -60,13 +60,13 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        GetComponent<EnemyMovement>().Knockback(hitPosition);
+        GetComponent<EnemyAI>().Knockback(hitPosition);
     }
 
     private void OnDeath()
     {
         _sprite.gameObject.GetComponent<BoxCollider>().enabled = false;
-        GetComponent<EnemyMovement>().EnemyKilled();
+        GetComponent<EnemyAI>().EnemyKilled();
 
         _animator.Play("death");
         _dyingCounter = 0.8f;

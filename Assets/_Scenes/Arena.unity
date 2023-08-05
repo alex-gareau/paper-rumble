@@ -2116,7 +2116,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &206080982
 MonoBehaviour:
@@ -7116,11 +7116,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 1859319829145799621, guid: f4d5b2564625c4fd0aa717ec865ad901, type: 3}
+  - {fileID: 1859319829145799621, guid: 28016b784f5458944a7531d900ea6578, type: 3}
   spawnPosition:
   - {fileID: 1413530349}
   - {fileID: 188467049}
-  waveEnemies: 10
+  waveEnemies: 4
   enemySpawnCounter: 1
 --- !u!1 &1791654804
 GameObject:
@@ -7303,7 +7303,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-18146
+  m_Name: pb_Mesh-57906
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7882,7 +7882,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-18160
+  m_Name: pb_Mesh-57920
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8067,13 +8067,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 338541986688472404, guid: 1b9d5d4edf9f49e46b626c05a7d28358, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.508
+      objectReference: {fileID: 0}
+    - target: {fileID: 338541986688472404, guid: 1b9d5d4edf9f49e46b626c05a7d28358, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.066
+      objectReference: {fileID: 0}
     - target: {fileID: 899432524483034539, guid: 1b9d5d4edf9f49e46b626c05a7d28358, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2135755295}
     - target: {fileID: 899432524483034539, guid: 1b9d5d4edf9f49e46b626c05a7d28358, type: 3}
       propertyPath: m_VersionIndex
-      value: 2304
+      value: 2310
       objectReference: {fileID: 0}
     - target: {fileID: 899432524483034539, guid: 1b9d5d4edf9f49e46b626c05a7d28358, type: 3}
       propertyPath: m_Textures0.Array.data[3].y
@@ -8113,7 +8121,7 @@ PrefabInstance:
       objectReference: {fileID: 1879233848}
     - target: {fileID: 899432525057132390, guid: 1b9d5d4edf9f49e46b626c05a7d28358, type: 3}
       propertyPath: m_VersionIndex
-      value: 3398
+      value: 3404
       objectReference: {fileID: 0}
     - target: {fileID: 899432525057132390, guid: 1b9d5d4edf9f49e46b626c05a7d28358, type: 3}
       propertyPath: m_Tangents.Array.data[0].y
@@ -8213,7 +8221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2143309492051734412, guid: 1b9d5d4edf9f49e46b626c05a7d28358, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2143309492051734412, guid: 1b9d5d4edf9f49e46b626c05a7d28358, type: 3}
       propertyPath: m_LocalPosition.x
