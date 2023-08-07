@@ -17,6 +17,6 @@ public class DepthSorting : MonoBehaviour
         float distance = Mathf.Abs(cameraTransform.position.z - transform.position.z);
 
         // Set the sorting order based on the distance
-        spriteRenderer.sortingOrder = Mathf.RoundToInt(distance * -50);
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(distance * -10);
     }
 }

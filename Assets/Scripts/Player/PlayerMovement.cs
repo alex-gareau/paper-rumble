@@ -272,18 +272,30 @@ public class PlayerMovement : MonoBehaviour
         if (flipped && movingBackward)
         {
             //weapon.position = weaponLeftPosition.position;
+            //TODO should check if shield is 3D or not
+            shield.GetChild(0).transform.localScale = new Vector3(shield.GetChild(0).transform.localScale.x, 1, shield.GetChild(0).transform.localScale.z);
+
             shield.position = new Vector3(shieldFrontLeftPosition.position.x, shieldBackRightPosition.position.y, shieldFrontLeftPosition.position.z);
         } else if (flipped)
         {
             //weapon.position = weaponRightPosition.position;
+            //TODO should check if shield is 3D or not
+            shield.GetChild(0).transform.localScale = new Vector3(shield.GetChild(0).transform.localScale.x, -1, shield.GetChild(0).transform.localScale.z);
+
             shield.position = new Vector3(shieldFrontLeftPosition.position.x, shieldFrontRightPosition.position.y, shieldBackLeftPosition.position.z);
         } else if (!flipped && movingBackward)
         {
             //weapon.position = weaponRightPosition.position;
+            //TODO should check if shield is 3D or not
+            shield.GetChild(0).transform.localScale = new Vector3(shield.GetChild(0).transform.localScale.x, -1, shield.GetChild(0).transform.localScale.z);
+
             shield.position = new Vector3(shieldBackLeftPosition.position.x, shieldBackLeftPosition.position.y, shieldBackLeftPosition.position.z);
         } else
         {
             //weapon.position = weaponRightPosition.position;
+            //TODO should check if shield is 3D or not
+            shield.GetChild(0).transform.localScale = new Vector3(shield.GetChild(0).transform.localScale.x, 1, shield.GetChild(0).transform.localScale.z);
+
             shield.position = new Vector3(shieldFrontLeftPosition.position.x, shieldFrontLeftPosition.position.y, shieldFrontLeftPosition.position.z);
         }
     }
