@@ -104,6 +104,7 @@ public class Collectable : MonoBehaviour
         launched = false;
         pickable = false;
         ToggleTrigger(false);
+        ToggleRenderer(true);
         GetComponent<Rigidbody>().AddForce(Random.Range(-2, 2), Random.Range(4, 6), Random.Range(-2, 2), ForceMode.Impulse);
         Invoke("CanCheckVelocity", 0.3f);
         

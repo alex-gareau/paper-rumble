@@ -13,8 +13,13 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _sprite;
 
+    [Header("Animations and effects")]
     [SerializeField]
     private Animator _animator;
+    [SerializeField]
+    private Animator _spriteAnimator;
+
+    private bool _flipped;
 
     [SerializeField]
     private GameObject _deathParticles;
@@ -46,6 +51,17 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if (!_flipped && GetComponent<EnemyAI>().XVelocity < 0)
+        {
+            _flipped = true;
+            _animator.SetTrigger("Flip");
+        }
+        else if (_flipped && GetComponent<EnemyAI>().XVelocity > 0)
+        {
+            _flipped = false;
+            _animator.SetTrigger("Flip");
+        }
     }
 
     public void TakeDamage(int damage, Vector3 hitPosition)
@@ -68,7 +84,8 @@ public class Enemy : MonoBehaviour
         _sprite.gameObject.GetComponent<BoxCollider>().enabled = false;
         GetComponent<EnemyAI>().EnemyKilled();
 
-        _animator.Play("death");
+        _animator.enabled = false;
+        _spriteAnimator.Play("death");
         _dyingCounter = 0.8f;
 
         for (int i = 0; i < 3; i++)

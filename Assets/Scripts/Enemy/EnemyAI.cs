@@ -18,7 +18,10 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private Rigidbody _rb;
 
+    public float XVelocity {get; set;}
+
     private bool _isDead;
+    private bool _hasEntered;
 
     [Header("Knockback variables")]
     [SerializeField]
@@ -103,12 +106,28 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        //Check if the player is within the detection range
-        if (Vector3.Distance(transform.position, _player.position) <= _detectionRange && _navMeshAgent.enabled)
+        if(!_hasEntered)
         {
-            Vector3 direction = _player.position - transform.position;
-            _navMeshAgent.destination = _player.position;
+            _navMeshAgent.destination = _entrancePoint.position;
+
+            if(Vector3.Distance(transform.position, _entrancePoint.position) <= _attackRange && _navMeshAgent.enabled)
+            {
+                XVelocity = _navMeshAgent.velocity.x;
+                _hasEntered = true;
+                _navMeshAgent.destination = _player.position;
+            }
+        } else 
+        {
+            //Check if the player is within the detection range
+            if (Vector3.Distance(transform.position, _player.position) <= _detectionRange && _navMeshAgent.enabled)
+            {
+                XVelocity = _navMeshAgent.velocity.x;
+                _navMeshAgent.destination = _player.position;
+
+            }
         }
+
+        
     }
 
     /// <summary>

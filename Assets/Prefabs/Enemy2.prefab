@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1659641742318789729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.613, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1659641742604065179}
@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 1859319829145799621}
   - component: {fileID: 2003683814}
   - component: {fileID: 2003683813}
+  - component: {fileID: 5376076399123465089}
   m_Layer: 8
   m_Name: Enemy2
   m_TagString: Untagged
@@ -228,7 +229,8 @@ MonoBehaviour:
   _damage: 1
   _currentHealth: 1
   _sprite: {fileID: 1659641742318789757}
-  _animator: {fileID: 202711611}
+  _animator: {fileID: 5376076399123465089}
+  _spriteAnimator: {fileID: 202711611}
   _deathParticles: {fileID: 3443847951944570040, guid: c564c5609341e44aca21cb61d22606e5, type: 3}
   _coinPrefab: {fileID: 2104039276496651845, guid: a5fe8a2f8816347638cfc777f5ae843f, type: 3}
 --- !u!114 &2003683814
@@ -272,6 +274,27 @@ NavMeshAgent:
   m_BaseOffset: 0.55
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &5376076399123465089
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659641742604065176}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37cc2059f9591754fb70a54a69794dad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8758932855363254197
 GameObject:
   m_ObjectHideFlags: 0

@@ -45,9 +45,12 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Enemy newEnemy = Instantiate(enemyPrefab[0], spawnPosition[0].transform.position, spawnPosition[0].transform.rotation);
 
-        newEnemy.SetupEnemy(3, spawnPosition[0].EntrancePosition, 2f);
+        int randomPos = Random.Range(0, spawnPosition.Count);
+
+        Enemy newEnemy = Instantiate(enemyPrefab[0], spawnPosition[randomPos].transform.position, transform.rotation);
+
+        newEnemy.SetupEnemy(3, spawnPosition[randomPos].EntrancePosition, 2f);
 
         remainingEnemies--;
 
